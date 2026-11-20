@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7f4">
+  <meta name="description" content="A friendly JSS3 mathematics study hub with syllabus guides, worked answers and BECE-style practice.">
+  <title>Maths Made Easy | JSS3 Study Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Maths Made Easy home">
+        <span class="brand-mark" aria-hidden="true">∑</span>
+        <span class="brand-copy"><strong>Maths Made Easy</strong><small>JSS3 STUDY HUB</small></span>
+      </a>
+      <div class="sidebar-label">YOUR CLASSROOM</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="home"><span class="nav-icon">⌂</span>Overview</button>
+        <button class="nav-link" data-view="syllabus"><span class="nav-icon">▤</span>Syllabus</button>
+        <button class="nav-link" data-view="practice"><span class="nav-icon">✎</span>Practice questions</button>
+        <button class="nav-link" data-view="progress"><span class="nav-icon">◷</span>My progress</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-note">
+        <span class="note-spark">✦</span>
+        <strong>Small steps add up.</strong>
+        <p>Keep practising and you’ll be ready for anything.</p>
+        <button class="text-button" data-view="practice">Start a practice set <span>→</span></button>
+      </div>
+      <div class="sidebar-footer"><span class="status-dot"></span> Made for JSS3 learners</div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="menu-button" id="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
+        <div class="breadcrumb"><span>Learning space</span><span class="crumb-divider">/</span><strong id="current-crumb">Overview</strong></div>
+        <div class="topbar-right"><span class="class-chip"><span>✦</span> JSS3 Mathematics</span><span class="avatar" aria-label="Student">S</span></div>
+      </header>
+      <div class="content-wrap">
+        <section class="view active" id="view-home" aria-labelledby="welcome-title">
+          <div class="welcome-row">
+            <div><p class="eyebrow"><span class="eyebrow-line"></span> YOUR LEARNING SPACE</p><h1 id="welcome-title">You’ve got this, <span>scholar.</span></h1><p class="welcome-subtitle">Build your maths confidence one topic at a time.</p></div>
+            <div class="date-pill"><span class="date-icon">▦</span><span id="today-date"></span></div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-copy">
+              <div class="hero-tag"><span>✦</span> YOUR NEXT STEP</div>
+              <h2>Make room for<br> a little <em>maths magic.</em></h2>
+              <p>Review a topic, try a few questions, and watch your confidence grow.</p>
+              <button class="button button-light" data-view="practice">Explore practice questions <span>→</span></button>
+            </div>
+            <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="math-note note-one">x + 4 = 12</div><div class="math-note note-two">A = πr²</div><div class="math-note note-three">3 : 5</div><div class="hero-orb">∑</div><span class="art-star star-one">✳</span><span class="art-star star-two">✦</span><span class="art-dot dot-one"></span><span class="art-dot dot-two"></span></div>
+          </div>
+          <div class="section-heading"><div><p class="eyebrow">A GOOD PLACE TO BEGIN</p><h2>Your learning snapshot</h2></div><button class="subtle-link" data-view="progress">See your progress <span>→</span></button></div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-icon icon-lilac">▤</div><div class="stat-label">Syllabus topics</div><div class="stat-number">09 <span>topics</span></div><div class="stat-foot"><span class="mini-track"><i style="width: 18%"></i></span><span>Ready to explore</span></div></article>
+            <article class="stat-card"><div class="stat-icon icon-peach">✎</div><div class="stat-label">Questions answered</div><div class="stat-number" id="answered-stat">00 <span>questions</span></div><div class="stat-foot"><span class="mini-track peach-track"><i id="answered-track" style="width: 0%"></i></span><span id="accuracy-stat">Your practice adds up</span></div></article>
+            <article class="stat-card"><div class="stat-icon icon-mint">◎</div><div class="stat-label">Correct answers</div><div class="stat-number" id="correct-stat">00 <span>so far</span></div><div class="stat-foot"><span class="stat-positive">✦</span><span>Keep up the great work</span></div></article>
+          </div>
+          <div class="section-heading topic-heading"><div><p class="eyebrow">PICK UP WHERE YOU LIKE</p><h2>Explore the syllabus</h2></div><button class="subtle-link" data-view="syllabus">View all topics <span>→</span></button></div>
+          <div class="topic-grid" id="home-topics"></div>
+          <div class="disclaimer"><span class="disclaimer-icon">i</span><p><strong>A note about BECE practice:</strong> The year-labelled practice sets here contain original revision questions, not official past-paper questions. They are for practice and do not claim to reproduce any BECE paper.</p></div>
+        </section>
+        <section class="view" id="view-syllabus" aria-labelledby="syllabus-title">
+          <div class="page-heading"><p class="eyebrow"><span class="eyebrow-line"></span> JSS3 MATHEMATICS</p><h1 id="syllabus-title">Your syllabus, <span>made simple.</span></h1><p>Choose a topic to see what to learn and the key ideas to remember.</p></div>
+          <div class="syllabus-intro"><span class="intro-icon">✦</span><div><strong>One topic at a time</strong><p>Use these topic guides as a revision checklist. Your teacher’s scheme of work is the best guide to what your class covers and when.</p></div></div>
+          <div class="syllabus-grid" id="syllabus-grid"></div>
+        </section>
+        <section class="view" id="view-practice" aria-labelledby="practice-title">
+          <div class="page-heading practice-page-heading"><p class="eyebrow"><span class="eyebrow-line"></span> LEARN BY DOING</p><h1 id="practice-title">Practice makes <span>progress.</span></h1><p>Try a question, check your answer, and read the worked explanation.</p></div>
+          <div class="practice-notice"><span>i</span><p><strong>Original BECE-style revision:</strong> These are independently written practice questions grouped by revision year. They are not official BECE past questions or endorsed by an examination body.</p></div>
+          <div class="practice-toolbar">
+            <div class="filter-group"><label for="year-filter">Practice set</label><select id="year-filter"><option value="all">All years</option><option value="2022">2022 revision</option><option value="2023">2023 revision</option><option value="2024">2024 revision</option><option value="2025">2025 revision</option><option value="2026">2026 revision</option></select></div>
+            <div class="filter-group"><label for="topic-filter">Topic</label><select id="topic-filter"><option value="all">All topics</option></select></div><div class="question-count" id="question-count"></div>
+          </div>
+          <div class="question-list" id="question-list"></div>
+          <div class="empty-state" id="empty-state" hidden><span>⌕</span><h2>No questions in this set yet</h2><p>Try another year or topic filter to find a practice question.</p></div>
+        </section>
+        <section class="view" id="view-progress" aria-labelledby="progress-title">
+          <div class="page-heading"><p class="eyebrow"><span class="eyebrow-line"></span> YOUR EFFORT COUNTS</p><h1 id="progress-title">Look how far <span>you’ve come.</span></h1><p>Your practice history is saved on this device.</p></div>
+          <div class="progress-summary"><article class="progress-card progress-total"><span class="progress-symbol">✎</span><span class="progress-label">Questions checked</span><strong id="progress-answered">0</strong><small>Every attempt is a step forward.</small></article><article class="progress-card progress-correct"><span class="progress-symbol">✓</span><span class="progress-label">Correct answers</span><strong id="progress-correct">0</strong><small id="progress-accuracy">Keep practising to build your score.</small></article><article class="progress-card progress-rate"><span class="progress-symbol">↗</span><span class="progress-label">Accuracy</span><strong id="progress-rate">—</strong><small>Based on questions you’ve checked.</small></article></div>
+          <div class="progress-detail"><div><p class="eyebrow">KEEP YOUR MOMENTUM</p><h2>There’s always another win.</h2><p>Revisit a topic or pick a new set of questions. Your progress stays saved in this browser.</p></div><button class="button button-primary" data-view="practice">Continue practising <span>→</span></button></div>
+          <button class="reset-button" id="reset-progress">Reset saved progress</button>
+        </section>
+        <footer class="site-footer"><span>Maths Made Easy <span class="footer-dot">•</span> JSS3 learning hub</span><span>Practice thoughtfully. Keep asking why.</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-scrim" id="mobile-scrim"></div>
+</body>
+</html>
